@@ -90,22 +90,22 @@
 
 
 
-<meta name="description" content="本篇主要讲解git的安装配置以及使用">
+<meta name="description" content="本篇主要讲解git的安装配置">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git的安装与使用">
+<meta property="og:title" content="git的安装">
 <meta property="og:url" content="http://Blend-y.github.io/2017/04/26/git的安装与使用/index.html">
 <meta property="og:site_name" content="Blend-Zlq">
-<meta property="og:description" content="本篇主要讲解git的安装配置以及使用">
+<meta property="og:description" content="本篇主要讲解git的安装配置">
 <meta property="og:image" content="http://blend-y.github.io/images/git_web.jpg">
 <meta property="og:image" content="http://blend-y.github.io/images/install1.jpg">
 <meta property="og:image" content="http://blend-y.github.io/images/install2.jpg">
 <meta property="og:image" content="http://blend-y.github.io/images/install3.jpg">
 <meta property="og:image" content="http://blend-y.github.io/images/install4.jpg">
-<meta property="og:updated_time" content="2017-04-27T09:18:28.518Z">
+<meta property="og:updated_time" content="2017-05-02T05:30:59.342Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git的安装与使用">
-<meta name="twitter:description" content="本篇主要讲解git的安装配置以及使用">
+<meta name="twitter:title" content="git的安装">
+<meta name="twitter:description" content="本篇主要讲解git的安装配置">
 <meta name="twitter:image" content="http://blend-y.github.io/images/git_web.jpg">
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title>git的安装与使用 | Blend-Zlq</title>
+  <title>git的安装 | Blend-Zlq</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -280,7 +280,7 @@
             
             
               
-                git的安装与使用
+                git的安装
               
             
           </h1>
@@ -363,7 +363,7 @@
       
 
       
-        <p>本篇主要讲解git的安装配置以及使用<br><a id="more"></a></p>
+        <p>本篇主要讲解git的安装配置<br><a id="more"></a></p>
 <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><blockquote><p>Git是一款免费、开源的分布式版本控制系统，用于敏捷高效地处理任何或小或大的项目。<br>Git是一个开源的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。<br>Git 是 Linus Torvalds 为了帮助管理 Linux 内核开发而开发的一个开放源码的版本控制软件。</p>
 </blockquote>
 <h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><blockquote><p>首先你可以打开命令行输入  git -version</p>
@@ -373,19 +373,20 @@
 </blockquote>
 <h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><blockquote><p>点击<a href="https://git-scm.com/" target="_blank" rel="external">Git</a>进入官网下载最新版。</p>
 </blockquote>
-<p><img src="/images/git_web.jpg" class="full-image" style="width:60%;margin:0px;" alt="Git官网"><br><blockquote><p>选择你电脑的系统的git版本；<br>        1.Git for Windows Setup   ——git的window版本<br>        2.Git for Windows Portable (“thumbdrive edition”)  ——git的window便携式版本（U盘）</p>
+<p><img src="/images/git_web.jpg" class="full-image" id="img" alt="Git官网"><br><blockquote><p>选择你电脑的系统的git版本；<br>        1.Git for Windows Setup   ——git的window版本<br>        2.Git for Windows Portable (“thumbdrive edition”)  ——git的window便携式版本（U盘）</p>
 </blockquote></p>
 <h4 id="如何查看自己的电脑版本号"><a href="#如何查看自己的电脑版本号" class="headerlink" title="如何查看自己的电脑版本号"></a>如何查看自己的电脑版本号</h4><blockquote><p>1  计算机右键单击，选择属性。在系统栏目里有系统类型；显示的就是你的系统位数。<br>2  命令行输入 systeminfo命令，等待查询电脑配置信息。在随后出来的信息中的系统类型就是你的系统位数。</p>
 </blockquote>
 <p>这里我的电脑是window64位；所以选择64位的git版本下载；等待下载完成。<br><blockquote><p>一直点击NEXT直到出现选择。<br>在Windows Explorer integration选项中将“Git Bash here”和“Git GUI here”打对勾。</p>
-</blockquote><br><img src="/images/install1.jpg" class="full-image" style="width:60%;margin:0px;" alt="Git官网"><br><blockquote><p>在“Adjusting your PATH environment”选项中，默认即可。</p>
-</blockquote><br><img src="/images/install2.jpg" class="full-image" style="width:60%;margin:0px;" alt="Git官网"><br><blockquote><p>在“Configuring the line ending conversions”选项中，<br>第一个选项：如果是跨平台项目，在windows系统安装，选择；<br>第二个选项：如果是跨平台项目，在Unix系统安装，选择；<br>第三个选项：非跨平台项目，选择。</p>
-</blockquote><br><img src="/images/install3.jpg" class="full-image" style="width:60%;margin:0px;" alt="Git官网"><br><blockquote><p>选择“Finish”，结束安装。</p>
-</blockquote><br><img src="/images/install4.jpg" class="full-image" style="width:60%;margin:0px;" alt="Git官网"></p>
+</blockquote><br><img src="/images/install1.jpg" class="full-image" id="img" alt="Git官网"><br><blockquote><p>在“Adjusting your PATH environment”选项中，默认即可。</p>
+</blockquote><br><img src="/images/install2.jpg" class="full-image" id="img" alt="Git官网"><br><blockquote><p>在“Configuring the line ending conversions”选项中，<br>第一个选项：如果是跨平台项目，在windows系统安装，选择；<br>第二个选项：如果是跨平台项目，在Unix系统安装，选择；<br>第三个选项：非跨平台项目，选择。</p>
+</blockquote><br><img src="/images/install3.jpg" class="full-image" id="img" alt="Git官网"><br><blockquote><p>选择“Finish”，结束安装。</p>
+</blockquote><br><img src="/images/install4.jpg" class="full-image" id="img" alt="Git官网"></p>
 <h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>这里我们的git已经成功安装；接下来我们测试一下；<br><blockquote><p>首先你可以打开命令行输入  git -version</p>
 </blockquote><br>我们可以通过查看版本号的方法来判断电脑是否安装git<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ git -version</div><div class="line">git version 2.11.0.windows.1</div></pre></td></tr></table></figure></p>
 <blockquote><p>如果你跟上边显示的结果一样说明已经成功安装。如果出错，请仔细检查步骤。重新再来。</p>
 </blockquote>
+<p>##</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><blockquote><p>本篇主要是讲解了git的安装与配置。如果想继续了解git的使用，请看我博客的其它文章。</p>
 </blockquote>
 <p><span id="busuanzi_container_page_pv"><br>  本文总阅读量<span id="busuanzi_value_page_pv"></span>次<br></span></p>
@@ -534,7 +535,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -651,7 +652,7 @@
          // 这里的屏幕不一样对应的canvas上的点的数量也不一样
         document.write(' <script type="text/javascript" color="38,42,48" opacity="0.7" zIndex="-2"  count="'+ewq+'" src="http://cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js" > <script>')*/
   </script>
-    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>  
+    <script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
   
 
   
@@ -746,7 +747,6 @@
 
 
   
-
 
 
 
