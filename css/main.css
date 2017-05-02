@@ -1694,7 +1694,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #38ffff;
+  background: #ff617e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2797,4 +2797,7 @@ body {
 }
 .highlight span {
   padding-left: 8px;
+}
+.pullquote {
+  width: 100%;
 }
