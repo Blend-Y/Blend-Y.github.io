@@ -97,7 +97,7 @@
 <meta property="og:url" content="http://Blend-y.github.io/2017/05/02/Audio身上的属性方法和事件/index.html">
 <meta property="og:site_name" content="Blend-Zlq">
 <meta property="og:description" content="本篇介绍的是H5的Audio标签身上的属性方法跟事件">
-<meta property="og:updated_time" content="2017-05-03T02:16:59.081Z">
+<meta property="og:updated_time" content="2017-05-03T02:54:06.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Audio身上的属性方法和事件">
 <meta name="twitter:description" content="本篇介绍的是H5的Audio标签身上的属性方法跟事件">
@@ -388,7 +388,7 @@
 <figure class="highlight plain"><figcaption><span>歌曲在播放的过程中会一直调用fn</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">audio.ontimeupdate = fn()</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><figcaption><span>一首歌曲播放完之后调用fn</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">audio.onended = fn()</div></pre></td></tr></table></figure>
 <h2 id="事件驱动的编程模式"><a href="#事件驱动的编程模式" class="headerlink" title="事件驱动的编程模式"></a>事件驱动的编程模式</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">	var audio =  $(<span class="string">'audio'</span>).get(0);</div><div class="line">//    一首歌播放完之后播放下一首的事件</div><div class="line">    audio.onended=<span class="function"><span class="title">function</span></span> () &#123;</div><div class="line">        $(<span class="string">".aixin"</span>).removeClass(<span class="string">"active"</span>)</div><div class="line">        $(<span class="string">".xiayishou"</span>).triggerHandler(<span class="string">"click"</span>)</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是audio常用的属性跟方法.这里我写了一个实例 <a href="https://liqiangzhao.github.io/music/" target="_blank" rel="external">MUSIC</a>，大家可以看看其中的代码。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上就是audio常用的属性跟方法.这里我写了一个实例 <a href="https://liqiangzhao.github.io/music/" target="_blank" rel="external">MUSIC</a>，大家可以看看其中的代码。<br><span id="busuanzi_container_page_pv"><br>  本文总阅读量<span id="busuanzi_value_page_pv"></span>次<br></span></p>
 
       
     </div>
@@ -403,6 +403,27 @@
     <div>
       
         
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/images/weixin.png" alt="Liqiang Zhao WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/images/zhifubao.jpg" alt="Liqiang Zhao Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
 
       
     </div>
