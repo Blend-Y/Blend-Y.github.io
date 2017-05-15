@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Blend-Zlq">
 <meta property="og:description" content="JavaScript同步、异步、回调执行顺序之经典闭包setTimeout面试题分析">
 <meta property="og:image" content="http://blend-y.github.io/images/tb.jpg">
-<meta property="og:updated_time" content="2017-05-04T03:56:53.846Z">
+<meta property="og:updated_time" content="2017-05-04T04:05:56.273Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同步、异步、回调执行顺序">
 <meta name="twitter:description" content="JavaScript同步、异步、回调执行顺序之经典闭包setTimeout面试题分析">
@@ -422,7 +422,7 @@
 </blockquote>
 <p>我们还可以稍微做一点修改，把a里面Promise的 setTimeout(() =&gt; console.log(2), 0)改成 setTimeout(() =&gt; console.log(2), 2)，对，时间改成了2ms，为什么不改成1试试呢？1ms的话，浏览器都还没有反应过来呢。你改成大于或等于2的数字就能看到2个setTimeout的输出顺序发生了变化。所以回调函数正常情况下是在消息队列顺序执行的，但是使用setTimeout的时候，还需要注意时间的大小也会改变它的顺序。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>口诀不一定是万能的，只能作为一个辅助，更重要的还是要理解JavaScript的运行机制，才能对代码执行顺序有清晰的路线。<br>特殊情况下不适应口诀的也很正常，JavaScript博大精深，不是一句话就能概括出来的。<br><blockquote><p>最后，在跟着我念一遍口诀：同步 =&gt; 异步 =&gt; 回调</p>
-</blockquote></p>
+</blockquote><br><span id="busuanzi_container_page_pv"><br>  本文总阅读量<span id="busuanzi_value_page_pv"></span>次<br></span></p>
 
       
     </div>
@@ -486,6 +486,10 @@
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/08/meta标签详解/" rel="next" title="meta标签详解">
+                <i class="fa fa-chevron-left"></i> meta标签详解
+              </a>
             
           </div>
 
@@ -568,7 +572,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -590,7 +594,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -651,7 +655,6 @@
             
               
             
-
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#概括"><span class="nav-number">1.</span> <span class="nav-text">概括</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#面试题"><span class="nav-number">2.</span> <span class="nav-text">面试题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解析"><span class="nav-number">3.</span> <span class="nav-text">解析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#堆栈"><span class="nav-number">4.</span> <span class="nav-text">堆栈</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决"><span class="nav-number">5.</span> <span class="nav-text">解决</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let"><span class="nav-number">5.1.</span> <span class="nav-text">let</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包"><span class="nav-number">6.</span> <span class="nav-text">闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#综合"><span class="nav-number">7.</span> <span class="nav-text">综合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解答步骤"><span class="nav-number">8.</span> <span class="nav-text">解答步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤1"><span class="nav-number">8.1.</span> <span class="nav-text">步骤1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤2"><span class="nav-number">8.2.</span> <span class="nav-text">步骤2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤3"><span class="nav-number">8.3.</span> <span class="nav-text">步骤3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤4"><span class="nav-number">8.4.</span> <span class="nav-text">步骤4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤5"><span class="nav-number">8.5.</span> <span class="nav-text">步骤5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤6"><span class="nav-number">8.6.</span> <span class="nav-text">步骤6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤7"><span class="nav-number">8.7.</span> <span class="nav-text">步骤7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#步骤8"><span class="nav-number">8.8.</span> <span class="nav-text">步骤8</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
             

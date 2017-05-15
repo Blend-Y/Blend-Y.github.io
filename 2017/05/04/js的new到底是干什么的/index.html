@@ -99,7 +99,7 @@
 <meta property="og:description" content="大部分讲 new 的文章会从面向对象的思路讲起，但是我始终认为，在解释一个事物的时候，不应该引入另一个更复杂的事物。今天我从「省代码」的角度来讲 new。">
 <meta property="og:image" content="http://blend-y.github.io/images/new.jpg">
 <meta property="og:image" content="http://blend-y.github.io/images/new1.jpg">
-<meta property="og:updated_time" content="2017-05-04T03:27:54.326Z">
+<meta property="og:updated_time" content="2017-05-04T04:05:57.396Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js的new到底是干什么的">
 <meta name="twitter:description" content="大部分讲 new 的文章会从面向对象的思路讲起，但是我始终认为，在解释一个事物的时候，不应该引入另一个更复杂的事物。今天我从「省代码」的角度来讲 new。">
@@ -400,7 +400,7 @@
 <h2 id="注意-constructor-属性"><a href="#注意-constructor-属性" class="headerlink" title="注意 constructor 属性"></a>注意 constructor 属性</h2><p>new 操作为了记录「临时对象是由哪个函数创建的」，所以预先给「士兵.prototype」加了一个 constructor 属性：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">士兵.prototype = &#123;</div><div class="line">  constructor: 士兵</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>如果你重新对「士兵.prototype」赋值，那么这个 constructor 属性就没了，所以你应该这么写：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">士兵.prototype.兵种 = <span class="string">"美国大兵"</span></div><div class="line">士兵.prototype.攻击力 = 5</div><div class="line">士兵.prototype.行走 = <span class="function"><span class="title">function</span></span>()&#123; /*走俩步的代码*/&#125;</div><div class="line">士兵.prototype.奔跑 = <span class="function"><span class="title">function</span></span>()&#123; /*狂奔的代码*/  &#125;</div><div class="line">士兵.prototype.死亡 = <span class="function"><span class="title">function</span></span>()&#123; /*Go die*/    &#125;</div><div class="line">士兵.prototype.攻击 = <span class="function"><span class="title">function</span></span>()&#123; /*糊他熊脸*/   &#125;</div><div class="line">士兵.prototype.防御 = <span class="function"><span class="title">function</span></span>()&#123; /*护脸*/       &#125;</div></pre></td></tr></table></figure></p>
 <p>或者你也可以自己给 constructor 重新赋值：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">士兵.prototype = &#123;</div><div class="line">  constructor: 士兵,</div><div class="line">  兵种:<span class="string">"美国大兵"</span>,</div><div class="line">  攻击力:5,</div><div class="line">  行走:<span class="function"><span class="title">function</span></span>()&#123; /*走俩步的代码*/&#125;,</div><div class="line">  奔跑:<span class="function"><span class="title">function</span></span>()&#123; /*狂奔的代码*/  &#125;,</div><div class="line">  死亡:<span class="function"><span class="title">function</span></span>()&#123; /*Go die*/    &#125;,</div><div class="line">  攻击:<span class="function"><span class="title">function</span></span>()&#123; /*糊他熊脸*/   &#125;,</div><div class="line">  防御:<span class="function"><span class="title">function</span></span>()&#123; /*护脸*/       &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇详细通俗的讲述了new这个方法在JavaScript中的用法。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本篇详细通俗的讲述了new这个方法在JavaScript中的用法。<br><span id="busuanzi_container_page_pv"><br>  本文总阅读量<span id="busuanzi_value_page_pv"></span>次<br></span></p>
 
       
     </div>
@@ -550,7 +550,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -572,7 +572,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -633,7 +633,6 @@
             
               
             
-
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制造一个士兵"><span class="nav-number">2.</span> <span class="nav-text">制造一个士兵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#制造一百个士兵"><span class="nav-number">3.</span> <span class="nav-text">制造一百个士兵</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#质疑"><span class="nav-number">4.</span> <span class="nav-text">质疑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改进"><span class="nav-number">5.</span> <span class="nav-text">改进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#优雅？"><span class="nav-number">6.</span> <span class="nav-text">优雅？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JS之父的关怀"><span class="nav-number">7.</span> <span class="nav-text">JS之父的关怀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意-constructor-属性"><span class="nav-number">8.</span> <span class="nav-text">注意 constructor 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">9.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
