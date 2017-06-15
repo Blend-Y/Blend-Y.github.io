@@ -90,17 +90,17 @@
 
 
 
-<meta name="description" content="由工作中的偶然引发的深思，js的比较到底是怎么执行的">
+<meta name="description" content="由工作中的偶然引发的深思，js的(&amp;gt; &amp;lt;)比较到底是怎么执行的">
 <meta name="keywords" content="前端,javascript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈字符串的比较">
 <meta property="og:url" content="http://Blend-y.github.io/2017/06/05/浅谈字符串的比较/index.html">
 <meta property="og:site_name" content="Blend-Zlq">
-<meta property="og:description" content="由工作中的偶然引发的深思，js的比较到底是怎么执行的">
-<meta property="og:updated_time" content="2017-06-05T08:12:50.146Z">
+<meta property="og:description" content="由工作中的偶然引发的深思，js的(&amp;gt; &amp;lt;)比较到底是怎么执行的">
+<meta property="og:updated_time" content="2017-06-15T01:24:33.060Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈字符串的比较">
-<meta name="twitter:description" content="由工作中的偶然引发的深思，js的比较到底是怎么执行的">
+<meta name="twitter:description" content="由工作中的偶然引发的深思，js的(&amp;gt; &amp;lt;)比较到底是怎么执行的">
 
 
 
@@ -268,7 +268,7 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Liqiang Zhao">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/header.jpg">
+      <meta itemprop="image" content="/images/headers.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
@@ -367,7 +367,7 @@
       
 
       
-        <p>由工作中的偶然引发的深思，js的比较到底是怎么执行的<br><a id="more"></a></p>
+        <p>由工作中的偶然引发的深思，js的(&gt; &lt;)比较到底是怎么执行的<br><a id="more"></a></p>
 <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><blockquote><p>今天工作的时候碰到一个问题在判断用户要花费的金额跟用户钱包里的金额时，代码一直不按我设置好的路线执行，调试一番，发现是判断出了问题。</p>
 </blockquote>
 <h2 id="出现的问题是这样的"><a href="#出现的问题是这样的" class="headerlink" title="出现的问题是这样的"></a>出现的问题是这样的</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var price=document.getElementById(<span class="string">'price'</span>).value;  //<span class="string">'500'</span></div><div class="line">var balance=document.getElementById(<span class="string">'balance'</span>).value;  //<span class="string">"177550.00"</span></div><div class="line"><span class="keyword">if</span>(price &gt; balance)&#123;</div><div class="line">... code....</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -446,6 +446,10 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/06/15/Hexo中添加网易云的实践/" rel="next" title="Hexo中添加网易云的实践">
+                <i class="fa fa-chevron-left"></i> Hexo中添加网易云的实践
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
@@ -515,7 +519,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/header.jpg"
+               src="/images/headers.jpg"
                alt="Liqiang Zhao" />
           <p class="site-author-name" itemprop="name">Liqiang Zhao</p>
            
@@ -527,7 +531,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -538,7 +542,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -549,7 +553,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -597,9 +601,7 @@
 
         
         
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=436514312&auto=1&height=66"></iframe>
-         
-
+		<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=28815250&auto=1&height=66"></iframe>
       </section>
 
       
