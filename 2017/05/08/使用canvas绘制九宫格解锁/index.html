@@ -97,10 +97,11 @@
 <meta property="og:url" content="http://Blend-y.github.io/2017/05/08/使用canvas绘制九宫格解锁/index.html">
 <meta property="og:site_name" content="Blend-Zlq">
 <meta property="og:description" content="本篇讲述如何用canvas实现九宫格解锁">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blend-y.github.io/images/canvas.jpg">
 <meta property="og:image" content="http://blend-y.github.io/images/canvas2.jpg">
 <meta property="og:image" content="http://blend-y.github.io/images/canvas3.jpg">
-<meta property="og:updated_time" content="2017-06-15T02:07:22.100Z">
+<meta property="og:updated_time" content="2017-06-15T02:07:22.101Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用canvas绘制九宫格解锁">
 <meta name="twitter:description" content="本篇讲述如何用canvas实现九宫格解锁">
@@ -373,7 +374,7 @@
       
         <p>本篇讲述如何用canvas实现九宫格解锁<br><a id="more"></a></p>
 <h2 id="概括"><a href="#概括" class="headerlink" title="概括"></a>概括</h2><p> canvas是 HTML5 新增的元素，可使用JavaScript脚本来绘制图形。例如：画图，合成照片，创建动画甚至实时视频处理与渲染。</p>
-<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">canvas</span> id=<span class="string">"canvas"</span> <span class="attribute">width</span>=<span class="string">"150"</span> height=<span class="string">"150"</span>&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure>
+<h2 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h2><h3 id="html"><a href="#html" class="headerlink" title="html"></a>html</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;canvas <span class="attribute">id</span>=<span class="string">"canvas"</span> <span class="attribute">width</span>=<span class="string">"150"</span> <span class="attribute">height</span>=<span class="string">"150"</span>&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure>
 <blockquote><p>注意：这个宽高写在行内 跟通过id，class来控制宽高是不一样的。</p>
 </blockquote>
 <h3 id="javscript"><a href="#javscript" class="headerlink" title="javscript"></a>javscript</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var canvas = document.getElementById(<span class="string">"canvas"</span>);</div><div class="line">var ctx = canvas.getContext(<span class="string">"2d"</span>);</div></pre></td></tr></table></figure>
@@ -394,7 +395,7 @@
 <p>绘制一个圆<br><figure class="highlight stylus"><figcaption><span>画一个以（x,y）为圆心的以radius为半径的圆弧（圆），从startAngle开始到endAngle结束，按照anticlockwise给定的方向（默认为顺时针）来生成。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">arc</span><span class="params">(x, y, radius, startAngle, endAngle, anticlockwise)</span></span></div></pre></td></tr></table></figure><br><figure class="highlight stylus"><figcaption><span>根据给定的控制点和半径画一段圆弧，再以直线连接两个控制点。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">arcTo</span><span class="params">(x1, y1, x2, y2, radius)</span></span></div></pre></td></tr></table></figure><br><blockquote><p>注意：这里的角度只能以Math.PI算，Math.PI==180度；</p>
 </blockquote><br><figure class="highlight stylus"><figcaption><span>清除指定矩形区域，让清除部分完全透明</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">clearRect</span><span class="params">(x, y, width, height)</span></span></div></pre></td></tr></table></figure><br><blockquote><p>这里的清除，是指清除到背景色。如果你通过ID，CLASS设置了canvas的背景色，那么，清理后会显示你设置的背景色的；</p>
 </blockquote><br>多加练习以后上边提到的方法后我们就可以实现我们的九宫格解锁了</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>html<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;<span class="selector-tag">canvas</span> id=<span class="string">"canvas"</span> <span class="attribute">width</span>=<span class="string">"300px"</span> height=<span class="string">"300px"</span>&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure><br>javascript<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var canvas=document.getElementById(<span class="string">"canvas"</span>);</div><div class="line">var ctx = canvas.getContext(<span class="string">"2d"</span>);</div><div class="line">ctx.lineWidth = <span class="number">3</span>;</div><div class="line">ctx.fillStyle=<span class="string">"#000"</span>;</div><div class="line">ctx.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">300</span>,<span class="number">300</span>);</div><div class="line">ctx.clearRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">300</span>,<span class="number">300</span>);	</div></pre></td></tr></table></figure><br><blockquote><p>在开始之前，我们先想一下，我们需要做什么，一个九宫格。肯定需要九个圆，九个圆心；所以我们先获取一下这9个圆的圆心；</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>html<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;canvas <span class="attribute">id</span>=<span class="string">"canvas"</span> <span class="attribute">width</span>=<span class="string">"300px"</span> <span class="attribute">height</span>=<span class="string">"300px"</span>&gt;&lt;/canvas&gt;</div></pre></td></tr></table></figure><br>javascript<br><figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var canvas=document.getElementById(<span class="string">"canvas"</span>);</div><div class="line">var ctx = canvas.getContext(<span class="string">"2d"</span>);</div><div class="line">ctx.lineWidth = <span class="number">3</span>;</div><div class="line">ctx.fillStyle=<span class="string">"#000"</span>;</div><div class="line">ctx.fillRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">300</span>,<span class="number">300</span>);</div><div class="line">ctx.clearRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">300</span>,<span class="number">300</span>);	</div></pre></td></tr></table></figure><br><blockquote><p>在开始之前，我们先想一下，我们需要做什么，一个九宫格。肯定需要九个圆，九个圆心；所以我们先获取一下这9个圆的圆心；</p>
 </blockquote><br>先获取cnavas的宽高,然后计算得出3个中点，通过中点，得到9个圆的圆心的坐标，这里的flag稍后会解释。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">arr=[50.5,150.5,250.5]; //这是那3个中点</div><div class="line">var data=[]; </div><div class="line"><span class="keyword">for</span>(var i=0;i&lt;arr.length;i++)&#123;</div><div class="line">	<span class="keyword">for</span>(var j=0;j&lt;arr.length;j++)&#123;㥐</div><div class="line">		var obj=&#123;x:arr[j],y:arr[i],flag:<span class="literal">false</span>&#125;</div><div class="line">		data.push(obj)</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>这里的data就是九个圆心的坐标，接下来我们是需要画圆，这里先封装一个画圆的函数。通过flag来判断是画实心圆跟空心圆这里的flag跟上边的flag是不一样的。</p>
 <h3 id="画圆函数"><a href="#画圆函数" class="headerlink" title="画圆函数"></a>画圆函数</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> rend_arc(x,y,r,flag,color)&#123;</div><div class="line">		ctx.beginPath();</div><div class="line">		ctx.strokeStyle = color;</div><div class="line">		ctx.fillStyle=color;</div><div class="line">		ctx.arc(x,y, r, 0, Math.PI * 2, <span class="literal">true</span>);</div><div class="line">		<span class="keyword">if</span>(!flag)&#123;</div><div class="line">			ctx.stroke();</div><div class="line">		&#125;<span class="keyword">else</span>&#123;</div><div class="line">			ctx.fill();</div><div class="line">		&#125;</div><div class="line">		ctx.closePath();</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
@@ -483,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/15/地址栏回车后发生了什么/" rel="next" title="地址栏回车后发生了什么">
-                <i class="fa fa-chevron-left"></i> 地址栏回车后发生了什么
+              <a href="/2017/05/08/meta标签详解/" rel="next" title="meta标签详解">
+                <i class="fa fa-chevron-left"></i> meta标签详解
               </a>
             
           </div>
@@ -493,8 +494,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/08/meta标签详解/" rel="prev" title="meta标签详解">
-                meta标签详解 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/15/地址栏回车后发生了什么/" rel="prev" title="地址栏回车后发生了什么">
+                地址栏回车后发生了什么 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -568,7 +569,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -638,7 +639,7 @@
 
         
         
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27646205&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=139774&auto=1&height=66"></iframe>
       </section>
 
       

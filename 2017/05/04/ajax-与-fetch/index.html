@@ -97,8 +97,9 @@
 <meta property="og:url" content="http://Blend-y.github.io/2017/05/04/ajax-与-fetch/index.html">
 <meta property="og:site_name" content="Blend-Zlq">
 <meta property="og:description" content="传统 Ajax 指的是 XMLHttpRequest（XHR），未来现在已被 Fetch 替代。">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blend-y.github.io/images/fetch.png">
-<meta property="og:updated_time" content="2017-05-04T04:06:18.741Z">
+<meta property="og:updated_time" content="2017-05-04T04:06:18.742Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ajax 与 fetch">
 <meta name="twitter:description" content="传统 Ajax 指的是 XMLHttpRequest（XHR），未来现在已被 Fetch 替代。">
@@ -375,8 +376,8 @@
 <h2 id="Why-Fetch"><a href="#Why-Fetch" class="headerlink" title="Why Fetch"></a>Why Fetch</h2><blockquote><p>XMLHttpRequest 是一个设计粗糙的 API，不符合关注分离（Separation of Concerns）的原则，配置和调用方式非常混乱，而且基于事件的异步模型写起来也没有现代的 Promise，generator/yield，async/await 友好。<br>Fetch 的出现就是为了解决 XHR 的问题，拿例子说明：</p>
 </blockquote>
 <p>使用 XHR 发送一个 json 请求一般是这样：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.open(<span class="string">'GET'</span>, url);</div><div class="line">xhr.responseType = <span class="string">'json'</span>;</div><div class="line"></div><div class="line">xhr.onload = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">  console.log(xhr.response);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">xhr.onerror = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">  console.log(<span class="string">"Oops, error"</span>);</div><div class="line">&#125;;</div><div class="line"></div><div class="line">xhr.send();</div></pre></td></tr></table></figure></p>
-<p>使用 Fetch 后，顿时看起来好一点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fetch(url).then(<span class="keyword">function</span>(response) &#123;</div><div class="line">  <span class="built_in">return</span> response.json();</div><div class="line">&#125;).then(<span class="keyword">function</span>(data) &#123;</div><div class="line">  console.log(data);</div><div class="line">&#125;).catch(<span class="keyword">function</span>(e) &#123;</div><div class="line">  console.log(<span class="string">"Oops, error"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>使用 ES6 的 箭头函数 后：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fetch(url).then(response =&gt; response.json())</div><div class="line">  .then(data =&gt; console.log(data))</div><div class="line">  .catch(e =&gt; console.log(<span class="string">"Oops, error"</span>, e))</div></pre></td></tr></table></figure></p>
+<p>使用 Fetch 后，顿时看起来好一点<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">fetch(url).<span class="keyword">then</span>(<span class="keyword">function</span>(response) &#123;</div><div class="line">  <span class="built_in">return</span> response.json();</div><div class="line">&#125;).<span class="keyword">then</span>(<span class="keyword">function</span>(data) &#123;</div><div class="line">  console.log(data);</div><div class="line">&#125;).catch(<span class="keyword">function</span>(e) &#123;</div><div class="line">  console.log(<span class="string">"Oops, error"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>使用 ES6 的 箭头函数 后：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">fetch(url).<span class="keyword">then</span>(response =&gt; response.json())</div><div class="line">  .<span class="keyword">then</span>(data =&gt; console.log(data))</div><div class="line">  .catch(e =&gt; console.log(<span class="string">"Oops, error"</span>, e))</div></pre></td></tr></table></figure></p>
 <p>现在看起来好很多了，但这种 Promise 的写法还是有 Callback 的影子，而且 promise 使用 catch 方法来进行错误处理的方式有点奇怪。不用急，下面使用 async/await 来做最终优化：<br><blockquote><p>注：async/await 是非常新的 API，属于 ES7，目前尚在 Stage 1(提议) 阶段，这是它的<a href="https://github.com/lukehoban/ecmascript-asyncawait" target="_blank" rel="external">完整规范</a> 。使用 <a href="https://babeljs.io/" target="_blank" rel="external">Babel</a>开启 <a href="https://babeljs.io/docs/usage/runtime/" target="_blank" rel="external">runtime</a> 模式后可以把 async/await 无痛编译成 ES5 代码。也可以直接使用 <a href="https://github.com/facebook/regenerator" target="_blank" rel="external">regenerator</a> 来编译到 ES5。</p>
 </blockquote><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">try &#123;</div><div class="line">  <span class="built_in">let</span> response = await fetch(url);</div><div class="line">  <span class="built_in">let</span> data = response.json();</div><div class="line">  console.log(data);</div><div class="line">&#125; catch(e) &#123;</div><div class="line">  console.log(<span class="string">"Oops, error"</span>, e);</div><div class="line">&#125;</div><div class="line">// 注：这段代码如果想运行，外面需要包一个 async <span class="keyword">function</span></div></pre></td></tr></table></figure></p>
 <p>duang~~ 的一声，使用 await 后，写异步代码就像写同步代码一样爽。await 后面可以跟 Promise 对象，表示等待 Promise resolve() 才会继续向下执行，如果 Promise 被 reject() 或抛出异常则会被外面的 try…catch 捕获。</p>
@@ -485,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/04/js的new到底是干什么的/" rel="next" title="js的new到底是干什么的">
-                <i class="fa fa-chevron-left"></i> js的new到底是干什么的
+              <a href="/2017/05/02/使用SASS/" rel="next" title="使用SASS">
+                <i class="fa fa-chevron-left"></i> 使用SASS
               </a>
             
           </div>
@@ -495,8 +496,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/02/使用SASS/" rel="prev" title="使用SASS">
-                使用SASS <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/04/js的new到底是干什么的/" rel="prev" title="js的new到底是干什么的">
+                js的new到底是干什么的 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -570,7 +571,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -640,7 +641,7 @@
 
         
         
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27646205&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=139774&auto=1&height=66"></iframe>
       </section>
 
       

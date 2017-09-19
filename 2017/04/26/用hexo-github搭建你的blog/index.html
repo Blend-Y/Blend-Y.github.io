@@ -97,9 +97,12 @@
 <meta property="og:url" content="http://Blend-y.github.io/2017/04/26/用hexo-github搭建你的blog/index.html">
 <meta property="og:site_name" content="Blend-Zlq">
 <meta property="og:description" content="本篇讲述了如何零基础使用hexo和github搭建自己的blog，内容比较繁琐，求各路大神轻喷；(蜜汁微笑)">
+<meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blend-y.github.io/images/hexo_github.png">
-<meta property="og:image" content="http://blend-y.github.io/path/to/image">
-<meta property="og:updated_time" content="2017-05-03T02:54:02.902Z">
+<meta property="og:image" content="http://blend-y.github.io/images/blog1.png">
+<meta property="og:image" content="http://blend-y.github.io/images/blog2.png">
+<meta property="og:image" content="http://blend-y.github.io/images/blog3.png">
+<meta property="og:updated_time" content="2017-09-19T09:14:01.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用hexo github搭建你的blog">
 <meta name="twitter:description" content="本篇讲述了如何零基础使用hexo和github搭建自己的blog，内容比较繁琐，求各路大神轻喷；(蜜汁微笑)">
@@ -372,35 +375,26 @@
       
         <p>本篇讲述了如何零基础使用hexo和github搭建自己的blog，内容比较繁琐，求各路大神轻喷；(蜜汁微笑)<br><a id="more"></a><br><img src="/images/hexo_github.png" class="full-image"></p>
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><h3 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h3><p><li>Window 64位</li><br>软件</p>
-<p><li>Git</li><br>[下载地址]</p>
- <blockquote><p>content  </p>
-<footer><strong>[赵丽强[</strong><cite>source]] [link] [source_link_title]</cite></footer></blockquote>  
-<!-- 代码块 -->
- <figure class="highlight abnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">alert(<span class="number">1</span>)<span class="comment">;</span></div></pre></td></tr></table></figure> 
-  <blockquote class="pullquote [class]"><p>content  </p>
-</blockquote>  
- <iframe scrolling="no" width="[width]" height="[height]" src="//jsfiddle.net/shorttag/embedded/[tabs]/[skin]" frameborder="0" allowfullscreen></iframe>  
-<pre><code> {% link text url [external] [title] %}  
-
- {% youtube video_id %}
-
-  {% post_path slug %}  
-{% post_link slug [title] %}  
-</code></pre><blockquote><p>标签插件</p>
+<p><li>node.js</li><br><blockquote><p>在 Windows 环境下安装 <a href="https://nodejs.org/en/" target="_blank" rel="external">Node.js</a> 非常简单，仅须下载安装文件并执行即可完成安装。</p>
+</blockquote>  </p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>利用 npm 命令即可安装。（在任意位置点击鼠标右键，选择Git bash）<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm <span class="keyword">install</span> -g hexo</div></pre></td></tr></table></figure><br>如果考虑网速原因。。推荐使用国内代理的npm<br><figure class="highlight tcl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm config <span class="keyword">set</span> <span class="keyword">registry</span> <span class="keyword">http</span>://<span class="keyword">registry</span>.cnpmjs.org</div></pre></td></tr></table></figure></p>
+<h2 id="创建hexo文件夹"><a href="#创建hexo文件夹" class="headerlink" title="创建hexo文件夹"></a>创建hexo文件夹</h2><blockquote><p>安装完成后，在你喜爱的文件夹下（如D:\hexo），执行以下指令(在D:\hexo内点击鼠标右键，选择Git bash)，Hexo 即会自动在目标文件夹建立网站所需要的所有文件。</p>
 </blockquote>
-<blockquote><p>这是引入HEXO的基本用法</p>
-<footer><strong>赵丽强</strong><cite><a href="https://www.baidu.com" target="_blank" rel="external">www.baidu.com</a></cite></footer></blockquote>
-<blockquote><p>这是引入HEXO的基本用法</p>
-<footer><strong>赵丽强</strong><cite>zlq的</cite></footer></blockquote>
-<blockquote><p>代码块</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init</div></pre></td></tr></table></figure>
+<blockquote><p>安装依赖包</p>
 </blockquote>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined">alert(1)	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight xml"><figcaption><span>Node.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined">alert(1)	</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<figure class="highlight xml"><figcaption><span>Javascript.js</span><a href="https://www.baidu.com" target="_blank" rel="external">node.js</a></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="actionscript"></span></div><div class="line">	alert(<span class="string">"111"</span>)</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>这也是代码块<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure></p>
-<p>文章的重要引苏<br><blockquote class="pullquote [class]"><p>这是重要的内容</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<h2 id="本地查看"><a href="#本地查看" class="headerlink" title="本地查看"></a>本地查看</h2><p>在命令行中输：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo generate</div><div class="line">hexo server</div></pre></td></tr></table></figure></p>
+<p>你也可以输缩写<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo s -g</div></pre></td></tr></table></figure></p>
+<p>在浏览器中输入 localhost:4000  查看</p>
+<p>至此，本地博客已经搭建起来了</p>
+<h2 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h2><h3 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h3><p>点击<a href="https://github.com/" target="_blank" rel="external">GitHub</a> 输入账号、邮箱、密码,然后点击注册按钮.<br><img src="/images/blog1.png" class="full-image" id="img" alt="new"></p>
+<h3 id="创建页面仓库"><a href="#创建页面仓库" class="headerlink" title="创建页面仓库"></a>创建页面仓库</h3><p>这个仓库的名字需要和你的账号对应，格式: yourname.github.io<br>输入基本信息，然后点击创建仓库.<br><img src="/images/blog2.png" class="full-image" id="img" alt="new"><br><img src="/images/blog3.png" class="full-image" id="img" alt="new"><br><blockquote><p>命名规则：你的github账号.github.io</p>
 </blockquote></p>
-<img src="/path/to/image" class="[class names]" title="[width] [height] [title text [alt text]]">
+<h2 id="怎样将Hexo与github-page-联系起来"><a href="#怎样将Hexo与github-page-联系起来" class="headerlink" title="怎样将Hexo与github page 联系起来"></a>怎样将Hexo与github page 联系起来</h2><h3 id="配置Git个人信息"><a href="#配置Git个人信息" class="headerlink" title="配置Git个人信息"></a>配置Git个人信息</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"XXX"</span></div><div class="line">git config --global user.email <span class="string">"XXX.qq.com"</span></div></pre></td></tr></table></figure>
+<h3 id="生成密钥"><a href="#生成密钥" class="headerlink" title="生成密钥"></a>生成密钥</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C <span class="string">"gdutxiaoxu@163.com"</span></div></pre></td></tr></table></figure>
+<h3 id="配置Deployment"><a href="#配置Deployment" class="headerlink" title="配置Deployment"></a>配置Deployment</h3><p>同样在_config.yml文件中，找到Deployment，然后按照如下修改：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:yourname/yourname.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>如果你需要一些hexo的命令的话，请去我的<a href="https://blend-y.github.io/2017/09/19/hexo命令大全/">hexo命令大全</a>查看；</p>
 <p><span id="busuanzi_container_page_pv"><br>  本文总阅读量<span id="busuanzi_value_page_pv"></span>次<br></span></p>
 
       
@@ -470,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/26/git的安装与使用/" rel="next" title="git的安装">
-                <i class="fa fa-chevron-left"></i> git的安装
+              <a href="/2017/04/25/hello-world/" rel="next" title="Welcome to my blog！">
+                <i class="fa fa-chevron-left"></i> Welcome to my blog！
               </a>
             
           </div>
@@ -480,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/04/25/hello-world/" rel="prev" title="Welcome to my blog！">
-                Welcome to my blog！ <i class="fa fa-chevron-right"></i>
+              <a href="/2017/04/26/git的安装与使用/" rel="prev" title="git的安装">
+                git的安装 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -555,7 +549,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">19</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -625,7 +619,7 @@
 
         
         
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=27646205&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=139774&auto=1&height=66"></iframe>
       </section>
 
       
@@ -637,7 +631,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统"><span class="nav-number">1.1.</span> <span class="nav-text">系统</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#准备"><span class="nav-number">1.</span> <span class="nav-text">准备</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#系统"><span class="nav-number">1.1.</span> <span class="nav-text">系统</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建hexo文件夹"><span class="nav-number">3.</span> <span class="nav-text">创建hexo文件夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地查看"><span class="nav-number">4.</span> <span class="nav-text">本地查看</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GitHub"><span class="nav-number">5.</span> <span class="nav-text">GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#注册"><span class="nav-number">5.1.</span> <span class="nav-text">注册</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建页面仓库"><span class="nav-number">5.2.</span> <span class="nav-text">创建页面仓库</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎样将Hexo与github-page-联系起来"><span class="nav-number">6.</span> <span class="nav-text">怎样将Hexo与github page 联系起来</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Git个人信息"><span class="nav-number">6.1.</span> <span class="nav-text">配置Git个人信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成密钥"><span class="nav-number">6.2.</span> <span class="nav-text">生成密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置Deployment"><span class="nav-number">6.3.</span> <span class="nav-text">配置Deployment</span></a></li></ol></li></ol></div>
             
 
           </div>
