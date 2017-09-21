@@ -98,7 +98,7 @@
 <meta property="og:site_name" content="Blend-Zlq">
 <meta property="og:description" content="本篇讲述了，sql常用的一些增删改查语句">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-09-21T08:41:56.413Z">
+<meta property="og:updated_time" content="2017-09-21T08:47:07.660Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mysql常用语句">
 <meta name="twitter:description" content="本篇讲述了，sql常用的一些增删改查语句">
@@ -389,8 +389,7 @@
 <h2 id="比较复杂的一些"><a href="#比较复杂的一些" class="headerlink" title="比较复杂的一些"></a>比较复杂的一些</h2><h3 id="多表联查"><a href="#多表联查" class="headerlink" title="多表联查"></a>多表联查</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">select  a.name,a.age,b.size,c.title,c.content from a join b on a.id = b.cid join c on a.id = c.pid <span class="built_in">where</span> a.age = 16 and b.size = 8  <span class="built_in">limit</span> 10,20</div></pre></td></tr></table></figure>
 <p>从a，b，c三个表中。查出a.name,a.age,b.size,c.title,c.content 条件是a.id =b.cid =c.pid。条件是a.age等于16. b.size等于8  从第10条开始取20条</p>
 <h3 id="一些条件判断语句"><a href="#一些条件判断语句" class="headerlink" title="一些条件判断语句"></a>一些条件判断语句</h3><p>都是通过某个表的某一个参数来判断的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">大于 -&gt; &gt; </div><div class="line">小于 -&gt;&lt; </div><div class="line"> 等于 -&gt; = </div><div class="line"> 大于等于 -&gt; &gt;= </div><div class="line"> 小于等于 -&gt; &lt;= </div><div class="line">包含 -&gt; like</div><div class="line">不包含 -&gt; not like</div><div class="line">开始 以 -&gt; like 9%   </div><div class="line">结束 以 -&gt; like %9</div><div class="line">是null -&gt; is null</div><div class="line">不是null -&gt; is not null </div><div class="line">介于1-9之间 -&gt; between 1 and 9</div><div class="line">不介于1-9之间 -&gt; not between 1 and 9</div><div class="line">在列表中 -&gt; <span class="keyword">in</span> (<span class="string">'1'</span>,<span class="string">'2'</span>)</div><div class="line">不在列表中 -&gt; not <span class="keyword">in</span> (<span class="string">'1'</span>,<span class="string">'2'</span>)</div></pre></td></tr></table></figure></p>
-<blockquote><p>我们平常所见的分页就是通过<br>undefined</p>
-<p>来实现的</p>
+<blockquote><p>我们平常所见的分页就是通过 &lt;–limit 0,20,limit 1,20–&gt; 来实现的</p>
 </blockquote>
 <h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>以上，为常用的一些sql语句。会不定期更新的<br><span id="busuanzi_container_page_pv"><br>  本文总阅读量<span id="busuanzi_value_page_pv"></span>次<br></span></p>
 
@@ -606,9 +605,8 @@
 
         
         
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=139774&auto=1&height=66"></iframe>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=586299&auto=1&height=66"></iframe>
       </section>
-
       
       <!--noindex-->
         <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
